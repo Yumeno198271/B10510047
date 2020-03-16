@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Reset.css">
+    <style>
+        .header {
+            display: flex;
+            padding: 6px 10px;
+            background-color: #000;
+        }
+
+        .header .logo {
+            display: inline-block;
+            padding: 6px 0;
+        }
+
+        .header nav {
+            text-align: center;
+            width: 100%;
+            font-size: 0;
+        }
+
+        .header nav a {
+            font-size: 32px;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 52px;
+            padding: 30px 30px;
+            transition: all .3s 0s ease;
+        }
+
+        .header nav a:hover {
+            border-bottom-color: red;
+            border-bottom-style: solid;
+            border-bottom-width: 3px;
+            color: white;
+        }
+
+        .wrap {
+            width: 960px;
+            margin: auto;
+        }
+
+        .about .wrap {
+            display: flex;
+        }
+
+        .about h2 {
+            width: 100%;
+            text-align: center;
+            padding: 60px 60px;
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: white;
+            text-decoration: none;
+            color: black;
+            transition: all 1s 0s ease;
+            border-width: 1px;
+            border-style: dashed;
+            border-color: black;
+            border-bottom-color: red;
+            border-bottom-style: solid;
+            border-bottom-width: 3px;
+        }
+
+        .btn:hover {
+            background-color: #f00;
+            color: white;
+        }
+
+        .button {
+            display: flex;
+            text-align: center;
+            width: 100%;
+            font-size: 35px;
+        }
+
+        .button a {
+            text-align: center;
+            width: 100%;
+            padding: 6px 10px;
+            margin-right: 10px;
+        }
+
+        .img1 {
+            margin-top: 100px;
+            margin-left: 100px;
+            position: relative;
+            width: 960px;
+            height: 820px;
+            z-index: 1;
+        }
+
+        .img2 {
+            margin-left: 300px;
+            margin-top: -683px;
+            position: relative;
+            width: 960px;
+            height: 820px;
+            z-index: 0;
+        }
+
+        .img3 {
+            margin-left: 150px;
+            margin-top: -416px;
+            position: relative;
+            width: 960px;
+            height: 820px;
+            z-index: 0;
+        }
+
+        .img4 {
+            margin-left: 650px;
+            margin-top: -1300px;
+            position: relative;
+            z-index: -1;
+        }
+
+        .img5 {
+            margin-left: 735px;
+            margin-top: 700px;
+            position: relative;
+            z-index: 3;
+        }
+
+
+        .img6 {
+            margin-left: 100px;
+            margin-top: -226px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .img7 {
+            margin-left: 407px;
+            margin-top: -25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .img8 {
+            position: relative;
+            margin-left: 430px;
+            margin-top: -680px;
+            z-index: 0;
+        }
+
+        .img9 {
+            margin-top: 600px;
+            margin-left: 100px;
+            position: relative;
+            width: 960px;
+            height: 820px;
+            z-index: 1;
+        }
+
+        .img10 {
+            margin-left: 300px;
+            margin-top: -683px;
+            position: relative;
+            width: 960px;
+            height: 820px;
+            z-index: 0;
+        }
+
+        .img11 {
+            margin-left: 150px;
+            margin-top: -416px;
+            position: relative;
+            width: 960px;
+            height: 820px;
+            z-index: 0;
+        }
+
+        .img12 {
+            margin-left: 650px;
+            margin-top: -1300px;
+            position: relative;
+            z-index: -1;
+        }
+
+
+        .img13 {
+            margin-left: 735px;
+            margin-top: 700px;
+            position: relative;
+            z-index: 3;
+        }
+
+
+        .img14 {
+            margin-left: 100px;
+            margin-top: -226px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .img15 {
+            margin-left: 407px;
+            margin-top: -25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .img16 {
+            position: relative;
+            margin-left: 430px;
+            margin-top: -680px;
+            z-index: 0;
+        }
+
+        .img17 {
+            margin-top: 600px;
+            margin-left: 100px;
+            position: relative;
+            width: 960px;
+            height: 820px;
+            z-index: 1;
+        }
+
+        .img18 {
+            margin-left: 300px;
+            margin-top: -683px;
+            position: relative;
+            width: 960px;
+            height: 820px;
+            z-index: 0;
+        }
+
+        .img19 {
+            margin-left: 150px;
+            margin-top: -416px;
+            position: relative;
+            width: 960px;
+            height: 820px;
+            z-index: 0;
+        }
+
+        .img20 {
+            margin-left: 650px;
+            margin-top: -1300px;
+            position: relative;
+            z-index: -1;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div class="header">
+        <a href="#" class="logo"></a>
+        <nav>
+            <a href="#">核心理念</a>
+            <a href="#">五大優勢</a>
+            <a href="#">46 THINGS</a>
+            <a href="#">影片演示</a>
+            <a href="#">搭載車款</a>
+        </nav>
+    </div>
+
+
+
+
+    <div class="about">
+        <div class="wrap">
+            <h2>五大優勢<br>—</h2>
+        </div>
+    </div>
+
+
+    <div class="button">
+        <a href="#" class="btn">操控樂趣</a>
+        <a href="#" class="btn">安全守護</a>
+        <a href="#" class="btn">乘坐舒適</a>
+        <a href="#" class="btn">以人為本</a>
+        <a href="#" class="btn">引以為傲</a>
+    </div>
+
+    <div class="IMG">
+
+        <div class="img1"><img src="asset 57.png" alt="操控樂趣"></div>
+        <div class="img2"><img src="asset 55.png" alt="車"></div>
+        <div class="img3"><img src="asset 58.png" alt="文字"></div>
+        <div class="img4"><img src="asset 40.png" alt="灰色區塊"></div>
+    </div>
+
+    <div class="IMG2">
+
+        <div class="img5"><img src="asset 60.png" alt="安全守護"></div>
+        <div class="img6"><img src="asset 59.png" alt="臉"></div>
+        <div class="img7"><img src="asset 61.png" alt="文字"></div>
+        <div class="img8"><img src="asset 41.png" alt="灰色區塊"></div>
+    </div>
+
+    <div class="IMG3">
+       
+        <div class="img9"><img src="asset 63.png" alt="乘坐舒適"></div>
+        <div class="img10"><img src="asset 62.png" alt="臉"></div>
+        <div class="img11"><img src="asset 64.png" alt="文字"></div> 
+        <div class="img12"><img src="asset 40.png" alt="灰色區塊"></div>
+    </div>
+
+
+
+    <div class="IMG4">
+       
+        <div class="img13"><img src="asset 66.png" alt="以人為本"></div>
+        <div class="img14"><img src="asset 65.png" alt="臉"></div>
+        <div class="img15"><img src="asset 67.png" alt="文字"></div> 
+        <div class="img16"><img src="asset 41.png" alt="灰色區塊"></div>
+    </div>
+
+
+    <div class="IMG5">
+       
+        <div class="img17"><img src="asset 69.png" alt="引以為傲"></div>
+        <div class="img18"><img src="asset 68.png" alt="手指"></div>
+        <div class="img19"><img src="asset 70.png" alt="文字"></div> 
+        <div class="img20"><img src="asset 40.png" alt="灰色區塊"></div>
+    </div>
+
+</body>
+
+</html>
