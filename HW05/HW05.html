@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .bg-light {
+            background-color: #ffffff !important;
+        }
+
+        .navbar {
+            position: relative;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: .5rem 1rem;
+        }
+
+
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+        }
+
+
+        .menu-icon {
+            width: 30px;
+            height: 25px;
+            border-top: 5px solid rgb(0, 0, 0);
+            border-bottom: 5px solid rgb(0, 0, 0);
+            background-color: rgb(0, 0, 0);
+            padding: 5px 0;
+            background-clip: content-box;
+        }
+
+        .btn-default {
+            background-color: transparent;
+        }
+
+
+        .logo_block {
+            width: 100%;
+            height: 126px;
+            background-color: transparent;
+        }
+
+        .logo img {
+            margin: 0 auto;
+            display: block;
+            padding-top: 30px;
+        }
+
+        .logo_left {
+            position: absolute;
+            display: block;
+            right: 2%;
+            bottom: 72%;
+        }
+
+        .menu {
+            height: 58px;
+            background-color: transparent;
+            position: relative;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+
+
+        .menu ol {
+            margin: 0;
+            padding-top: 15px;
+            display: inline-block;
+        }
+
+
+        .menu ol li {
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            list-style-type: none;
+            color: gray;
+        }
+
+
+        .breadcrumb {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            padding: .75rem 1rem;
+            margin-bottom: 1rem;
+            list-style: none;
+            background-color: transparent;
+            border-radius: .25rem;
+        }
+
+        .breadcrumb li a {
+            color: black;
+            font-weight: 500;
+            padding-left: 20px;
+        }
+
+        .bigpic {
+            width: 100%;
+            height: 720px;
+        }
+
+        .bigpic img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bigpic button {
+            width: 217px;
+            height: 60px;
+            border: transparent;
+            background-color: white;
+            font-size: 20px;
+            font-weight: bold;
+            position: absolute;
+            display: block;
+            left: 41.5%;
+            top: 148%;
+        }
+
+        .three_columns {
+            width: 100%;
+            height: 429px;
+            background-color: transparent;
+            padding-top: 8%;
+        }
+
+        .btn1 button {
+            border: transparent;
+            border-top: #83dcff;
+            border-bottom: #e6e6e6;
+            border-style: outset;
+            border-width: 2px;
+            background-color: transparent;
+            width: 366px;
+            height: 239px;
+            display: block;
+            margin: auto;
+        }
+
+
+        .btn2 button {
+            border: transparent;
+            border-top: #e2bf96;
+            border-bottom: #e6e6e6;
+            border-style: outset;
+            border-width: 2px;
+            background-color: transparent;
+            width: 366px;
+            height: 239px;
+            display: block;
+            margin: auto;
+        }
+
+
+        .btn3 button {
+            border: transparent;
+            border-top: #ff9999;
+            border-bottom: #e6e6e6;
+            border-style: outset;
+            border-width: 2px;
+            background-color: transparent;
+            width: 366px;
+            height: 239px;
+            display: block;
+            margin: auto;
+        }
+
+        .three_columns button h3 {
+            color: #83dcff;
+            font-size: 40px;
+            line-height: 100px;
+            display: block;
+            margin: auto;
+        }
+
+        .introduction_column {
+            width: 85%;
+            height: 493px;
+            background-color: rgb(0, 255, 234);
+            margin: auto;
+        }
+
+
+        .introduction_column h2 {
+            font-size: 100px;
+            color: white;
+        }
+
+        .introduction_column h3 {
+            font-size: 90px;
+            font-weight: 200;
+            line-height: 100px;
+            margin-top: -20px;
+            margin-bottom: 0;
+        }
+
+
+        .introduction_column h4 {
+            font-size: 30px;
+            font-weight: 300;
+            letter-spacing: 0;
+            margin-top: 10px;
+            padding-left: 5px;
+        }
+
+
+        .introduction_column button {
+            margin: 15px 8px;
+            padding: 7px 19px;
+            background: transparent;
+            border-color: #181a1f;
+            font-size: 15px;
+            color: #181a1f;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .introduction_column .text {
+            padding-top: 70px;
+        }
+
+
+        .mid_text {
+            height: 208px;
+            font-size: 40px;
+            display: flex;
+            text-align: center;
+        }
+
+
+        .mid_text h2 {
+            margin: 0px auto;
+            padding: 80px 0px 80px 0px;
+            word-break: break-all;
+            font-size: 40px;
+        }
+
+
+        .mid_text .txt1 {
+            font-weight: bold;
+        }
+
+        .mid_text .txt1 span {
+            vertical-align: baseline;
+        }
+
+        .mid_text .txt2 {
+            font-weight: 100;
+        }
+
+        .hair img {
+            width: 291px;
+            height: 269px;
+        }
+
+        .hair h4 {
+            padding-bottom: 20px;
+        }
+
+        .hair .col-3 button {
+            width: 291px;
+            height: 269px;
+        }
+
+
+        .products9,
+        .products7,
+        .products13 {
+            width: 114px;
+            height: 41px;
+            border: black;
+            border-style: outset;
+        }
+
+
+        .hair .col-3 button div {
+            padding: 4px 0px 4px 0px;
+            word-break: break-all;
+            margin: 0px auto;
+        }
+
+
+
+        .commodity .col-3 {
+            width: 293px;
+            height: 241px;
+        }
+
+        .commodity .col-12 {
+            width: 293px;
+            height: 241px;
+        }
+
+        .commodity .col-12 h5 {
+            font-weight: lighter;
+            color: #181a1f;
+            text-align: center;
+            line-height: 50px;
+        }
+
+
+        .shopping_btn {
+            display: flex;
+            text-align: center;
+            margin: auto 0px;
+            font-size: 13px;
+            margin-left: 70px;
+            margin-top: 20px;
+        }
+
+        .shopping_btn button {
+            border: transparent;
+            width: 123px;
+            font-size: 16px;
+            margin-left: -10px;
+            border: black;
+            border-style: outset;
+
+        }
+
+
+        .money {
+            font-weight: bold;
+            color: #181a1f;
+            font-size: 27px;
+            text-align: center;
+            display: block;
+            margin-left: 20px;
+        }
+
+        .small_label {
+            display: flex;
+            text-align: center;
+            margin: auto 0px;
+            margin-left: 90px;
+            padding-top: 20px;
+        }
+
+
+        .headline {
+            margin-top: 300px;
+            margin-bottom: 50px;
+        }
+
+
+        .AD .col-4 {
+            height: 534px;
+        }
+
+
+
+        .gray_lines {
+            width: 300px;
+            height: 1px;
+            background-color: #b1b1b1;
+            margin-left: 23px;
+        }
+
+
+        .black_square {
+            width: 54px;
+            height: 5px;
+            background-color: #181a1f;
+            margin-left: 124px;
+        }
+
+
+        .blog_date {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 8px;
+            margin: 15px 0;
+            padding: 0;
+            margin-left: 102px;
+        }
+
+
+        .blog_author {
+            color: #b1b1b1;
+            white-space: nowrap;
+            display: flex;
+            font-size: 13px;
+            margin-left: 62px;
+        }
+
+        .blog_author_txt {
+            color: #181a1f;
+        }
+
+
+        .AD img {
+            width: 350px;
+            height: 180px;
+            margin-left: -3px;
+        }
+
+
+        .blog_title {
+            font-size: 20px;
+            margin: 27px 0 7px;
+            text-transform: none;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+        .blog_title a {
+            color: #181a1f;
+            text-decoration: none;
+            margin-left: 38px;
+        }
+
+
+        .blog_content {
+            text-align: center;
+            font-size: 17px;
+            padding-bottom: 20px;
+        }
+
+        .blog_button {
+            border: black;
+            border-style: outset;
+            width: 113px;
+            height: 38px;
+            margin-left: 32%;
+        }
+
+
+        .hompage_newsletter {
+            outline: none !important;
+            vertical-align: top;
+            font-weight: normal;
+            line-height: 1.5em;
+            text-align: center;
+            padding: 80px 0 102px;
+            background-color: #dbf5ff;
+        }
+
+
+        .hompage_newsletter::before {
+            box-sizing: border-box;
+        }
+
+
+        .hompage_newsletter h3 {
+            font-size: 24px;
+            letter-spacing: 0;
+            margin: 15px 0;
+            font: bold 22px Work Sans;
+            color: #181a1f;
+            text-transform: uppercase;
+        }
+
+
+        .hompage_newsletter h4 {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            margin: 15px 0;
+            color: #181a1f;
+            text-transform: uppercase;
+        }
+
+
+        .hompage_newsletter .btn {
+            border: black;
+            border-style: outset;
+            width: 113px;
+            height: 38px;
+            background-color: transparent;
+            padding: 0 10px;
+        }
+
+
+        .hompage_newsletter .hint {
+            width: 415px;
+            height: 40px;
+            padding: 0 0 4px 0;
+            border-style: none;
+            background-color: white;
+        }
+
+
+
+        .hompage_newsletter h3 {
+            font-size: 25px;
+            padding-top: 70px;
+        }
+
+        .social_menu {
+            margin-left: 34%;
+        }
+
+
+        .social_menu li {
+            float: left;
+            list-style: none;
+            padding: 25px 10px;
+        }
+
+        .social_menu li button {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            border-style: outset;
+            border-color: #181a1f;
+        }
+
+        .map img {
+            width: 100%;
+            height: 300px;
+        }
+
+        .main_content .row {
+            width: 101%;
+            height: 557px;
+            background-color: #181a1f;
+        }
+
+
+        .footer_text {
+            width: 254px;
+            height: 250px;
+            font-weight: 300;
+            font-size: 20px;
+            margin: 100px 40px;
+            padding: 0;
+            color: #c8c8c8;
+            font-weight: 300;
+        }
+
+        .footer_text img {
+            padding-bottom: 30px;
+        }
+
+
+
+        .footer_links h4{
+            color: white;
+        }
+        
+
+        .footer_links li a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="search_bar w-100">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border">
+            <div class="dropdown">
+
+                <button type="button" class="btn btn-default" data-toggle="dropdown">
+                    <span style="font-family:Comic Sans MS;font-size:14px;" id="dropdownMenuButton">
+                        <div class="menu-icon"></div>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Wishlist</a></li>
+                    <li><a href="#">Checkout</a></li>
+                    <li class="divider"></li>
+                </ul>
+            </div>
+
+
+
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <button type="button" class="btn btn-link"><img src="shopping cart.png" alt=""></button>
+                </ul>
+
+
+
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                        <img src="search.png" alt="" style="width: 20px;height: 20px;">
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <div class="logo_block">
+        <div class="logo"><img src="logo.webp" alt=""></div>
+        <div class="logo_left">
+            <a href="#"><img src="logo_left.png" alt=""></a>
+        </div>
+    </div>
+
+
+    <div class="menu w-100">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">PRODUCTS</a></li>
+                <li class="breadcrumb-item"><a href="#">BLOG</a></li>
+                <li class="breadcrumb-item"><a href="#">SALE</a></li>
+                <li class="breadcrumb-item"><a href="#">ABOUT US</a></li>
+                <li class="breadcrumb-item"><a href="#">CONTACT US</a></li>
+            </ol>
+        </nav>
+    </div>
+
+
+    <div class="bigpic">
+        <img src="picture.jpg" alt="">
+        <button>JOIN NOW ➨</button>
+    </div>
+
+
+    <div class="three_columns">
+        <div class="row">
+            <div class="col-4 btn1">
+                <button>
+                    <h3>NEW ARRIVALS</h2>
+                        <p>SEE OUR LATEST MUST-HAVES>></p>
+                </button>
+            </div>
+            <div class="col-4 btn2">
+                <button>
+                    <h3 style="color: #e2bf96;">WE LOVE♡</h2>
+                        <p>CHECK OUT STYLISH FAVORITES>></p>
+                </button>
+            </div>
+            <div class="col-4 btn3">
+                <button>
+                    <h3 style="color: #ff9999;">FREE SHIPPING</h2>
+                        <p>ON ALL 2016 COLLECTION>></p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="introduction_column">
+        <div class="container">
+            <div class="row">
+                <div class="col-6"></div>
+                <div class="col-6 text">
+                    <h2>HAIR</h2h3>
+                        <h3>EXTENSIONS</h3>
+                        <h4>ADD LENGTH & VOLUME IN SECONDS</h4>
+                        <button>READ MORE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mid_text w-100">
+        <h2>
+            <div class="container">
+                <div class="row">
+                    <span class="txt1">BROWSE&ensp;</span>
+                    <span class="txt2">OUR CATEGORIES </span>
+                </div>
+            </div>
+        </h2>
+    </div>
+
+
+
+    <div class="hair">
+        <div class="container">
+            <div class="row">
+                <div class="col-3"><img src="category1.webp" alt="圖片說明"></div>
+                <div class="col-3"><img src="category2.webp" alt="圖片說明"></div>
+                <div class="col-3"><img src="category3.webp" alt="圖片說明"></div>
+                <div class="col-3"><img src="category4.webp" alt="圖片說明"></div>
+                <div class="col-3"><button>
+                        <h4>MEN’S HAIR CARE</h4>
+                        <div class="products7">products7</div>
+                    </button></div>
+                <div class="col-3"><button>
+                        <h4>HAIR STYLING</h4>
+                        <div class="products13">products13</div>
+                    </button></div>
+                <div class="col-3"><button>
+                        <h4>HAIR HEALTH TREATMENT</h4>
+                        <div class="products9">products9</div>
+                    </button></div>
+                <div class="col-3"><button>
+                        <h4>HAIR CARE FOR KIDS</h4>
+                        <div class="products7">products7</div>
+                    </button></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="mid_text w-100">
+        <h2>
+            <div class="container">
+                <div class="row">
+                    <span class="txt1">PRODUCTS&ensp;</span>
+                    <span class="txt2">ON SALE </span>
+                </div>
+            </div>
+        </h2>
+    </div>
+
+
+    <div class="commodity">
+        <div class="container">
+            <div class="row">
+                <div class="col-3"><img src="commodity1.png" alt="圖片說明">
+                    <div class="col-12">
+                        <h5>&ensp;&ensp;&ensp;Argan Oil Hair Mask</h5>
+                        <span class="money">$60.00</span>
+                        <div class="shopping_btn">
+                            <button><img src="shopping cart - 2.png" alt="購物車">Add to cart</button>
+                        </div>
+                        <a href="#" class="small_label">
+                            <img src="love.png" alt="">
+                            &ensp;
+                            <img src="eye.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3"><img src="commodity2.png" alt="圖片說明">
+                    <div class="col-12">
+                        <h5>&ensp;&ensp;&ensp;Garnier Fructis</h5>
+                        <span class="money">$90.00</span>
+                        <div class="shopping_btn">
+                            <button><img src="shopping cart - 2.png" alt="購物車">Add to cart</button>
+                        </div>
+                        <a href="#" class="small_label">
+                            <img src="love.png" alt="">
+                            &ensp;
+                            <img src="eye.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3"><img src="commodity3.png" alt="圖片說明">
+                    <div class="col-12">
+                        <h5>&ensp;&ensp;&ensp;Herbal Essences</h5>
+                        <span class="money">$80.00</span>
+                        <div class="shopping_btn">
+                            <button><img src="shopping cart - 2.png" alt="購物車">Add to cart</button>
+                        </div>
+                        <a href="#" class="small_label">
+                            <img src="love.png" alt="">
+                            &ensp;
+                            <img src="eye.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3"><img src="commodity4.png" alt="圖片說明">
+                    <div class="col-12">
+                        <h5>&ensp;&ensp;L'Oreal Paris Studio Line</h5>
+                        <span class="money">$90.00</span>
+                        <div class="shopping_btn">
+                            <button><img src="shopping cart - 2.png" alt="購物車">Add to cart</button>
+                        </div>
+                        <a href="#" class="small_label">
+                            <img src="love.png" alt="">
+                            &ensp;
+                            <img src="eye.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mid_text w-100 headline">
+        <h2>
+            <div class="container">
+                <div class="row">
+                    <span class="txt1">SEE&ensp;</span>
+                    <span class="txt2">WHAT'S NEW ON OUR BLOG </span>
+                </div>
+            </div>
+        </h2>
+    </div>
+
+
+    <div class="AD">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="gray_lines">
+                        <div class="black_square"></div>
+                    </div>
+                    <p class="blog_date">14 January</p>
+                    <div class="blog_author">Posted by&ensp;<p class="blog_author_txt"> David Braun ● 2 Comments </p>
+                    </div>
+                    <img src="AD1.jpg" alt="">
+                    <h3 class="blog_title"><a href="#">You bring beauty to the world</a></h3>
+                    <p class="blog_content">Coco Chanel said that a woman who cuts her hair is about...</p>
+                    <button class="blog_button">Read more</button>
+                </div>
+                <div class="col-4">
+                    <div class="gray_lines">
+                        <div class="black_square"></div>
+                    </div>
+                    <p class="blog_date">14 January</p>
+                    <div class="blog_author">Posted by&ensp;<p class="blog_author_txt"> David Braun ● 2 Comments </p>
+                    </div>
+                    <img src="AD2.jpg" alt="">
+                    <h3 class="blog_title"><a href="#">Of best hair products here</a></h3>
+                    <p class="blog_content">Whoever you are, a professional hair stylist or a person who
+                        professionally...</p>
+                    <button class="blog_button">Read more</button>
+                </div>
+                <div class="col-4">
+                    <div class="gray_lines">
+                        <div class="black_square"></div>
+                    </div>
+                    <p class="blog_date">14 January</p>
+                    <div class="blog_author">Posted by&ensp;<p class="blog_author_txt"> David Braun ● 2 Comments </p>
+                    </div>
+                    <img src="AD3.jpg" alt="">
+                    <h3 class="blog_title"><a href="#">Or to be more precise...have...</a></h3>
+                    <p class="blog_content">For saving your time, please use filters: brand, concerns, formulation,
+                        ingredient preferences,...</p>
+                    <button class="blog_button">Read more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mid_text w-100">
+        <h2>
+            <div class="container">
+                <div class="row">
+                    <span class="txt1">FEATURED&ensp;</span>
+                    <span class="txt2">PRODUCTS </span>
+                </div>
+            </div>
+        </h2>
+    </div>
+
+
+
+    <div class="commodity">
+        <div class="container">
+            <div class="row">
+                <div class="col-3"><img src="commodity5.png" alt="圖片說明">
+                    <div class="col-12">
+                        <h5 style="margin-left: 10px;">Infiniti Pro by Conair Hair Designer 3 in 1 Sty...</h5>
+                        <span class="money">$50.00</span>
+                        <div class="shopping_btn">
+                            <button><img src="shopping cart - 2.png" alt="購物車">Add to cart</button>
+                        </div>
+                        <a href="#" class="small_label">
+                            <img src="love.png" alt="">
+                            &ensp;
+                            <img src="eye.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3"><img src="commodity6.png" alt="圖片說明">
+                    <div class="col-12">
+                        <h5>&ensp;&ensp;InStyler Ionic Styler Pro Ceramic Flat Iron</h5>
+                        <span class="money">$66.00</span>
+                        <div class="shopping_btn">
+                            <button><img src="shopping cart - 2.png" alt="購物車">Add to cart</button>
+                        </div>
+                        <a href="#" class="small_label">
+                            <img src="love.png" alt="">
+                            &ensp;
+                            <img src="eye.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3"><img src="commodity7.png" alt="圖片說明">
+                    <div class="col-12">
+                        <h5>&ensp;Jose Eber Wet & Dry Flat Iron Straightener</h5>
+                        <span class="money">$88.00</span>
+                        <div class="shopping_btn">
+                            <button><img src="shopping cart - 2.png" alt="購物車">Add to cart</button>
+                        </div>
+                        <a href="#" class="small_label">
+                            <img src="love.png" alt="">
+                            &ensp;
+                            <img src="eye.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3"><img src="commodity8.png" alt="圖片說明">
+                    <div class="col-12">
+                        <h5>&ensp;Glide Thru Detangler Hair Comb or Brush</h5>
+                        <span class="money">$56.00</span>
+                        <div class="shopping_btn">
+                            <button><img src="shopping cart - 2.png" alt="購物車">Add to cart</button>
+                        </div>
+                        <a href="#" class="small_label">
+                            <img src="love.png" alt="">
+                            &ensp;
+                            <img src="eye.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="mid_text w-100 headline">
+        <h2>
+            <div class="container">
+                <div class="row">
+                    <span class="txt1">FOLLOW&ensp;</span>
+                    <span class="txt2">US ON INSTAGRAM </span>
+                </div>
+            </div>
+        </h2>
+    </div>
+
+
+
+    <div class="hompage_newsletter">
+        <div class="container">
+            <h3>GET OUR SPECIAL OFFERS</h3>
+            <h4>AND THE ULTIMATE HAIR CARE TIPS &amp; TRICKS!</h4>
+            <div class="homepage_newsletter_form">
+                <form method="post" action="/contact#contact_form" id="contact_form" accept-charset="UTF-8"
+                    class="contact-form"><input type="hidden" name="form_type" value="customer"><input type="hidden"
+                        name="utf8" value="✓">
+                    <input type="hidden" name="contact[tags]" value="prospect,newsletter" id="newsletter-tags">
+                    <input type="hidden" name="contact[first_name]" value="Newsletter" id="newsletter-first-name">
+                    <input type="hidden" name="contact[last_name]" value="Subscriber" id="newsletter-last-name">
+                    <input type="email" name="contact[email]" id="contact_email_footer" placeholder="Enter your email"
+                        class="hint">
+                    <button type="submit" name="subscribe" class="btn">Subscribe</button>
+                </form>
+            </div>
+            <h3>LET'S STAY CONNECTED</h3>
+            <div class="social_menu">
+                <nav>
+                    <li><button><img src="ico1.png" alt=""></button></li>
+                    <li><button><img src="ico2.png" alt=""></button></li>
+                    <li><button><img src="ico3.png" alt=""></button></li>
+                    <li><button><img src="ico4.png" alt=""></button></li>
+                    <li><button><img src="ico5.png" alt=""></button></li>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="map">
+        <img src="map.png" alt="地圖">
+    </div>
+
+
+
+    <div class="main_content">
+        <div class="row">
+            <div class="col-3">
+                <div class="footer_text">
+                    <img src="footer_logo.webp" alt="LOGO">
+                    <p>This web store was originally launched in 2002 and was then titled the Style Factory. This name
+                        was a perfect fit then, simply because we’ve always had our focus on our hair care & hair
+                        treatment products lineup.</p>
+                </div>
+            </div>
+            <div class="col-3 footer_links" style="border: red;border-style: outset;">
+                <h4>CATEGORIES</h4>
+                <li><a href="#">Hair Styling</a></li>
+                <li><a href="#">Men’s Hair Care</a></li>
+                <li><a href="#">Hair Care For Kids</a></li>
+                <li><a href="#">Hair Health Treatment</a></li>
+                <li><a href="#">Featured Products</a></li>
+                <li><a href="#">Sale</a></li>
+            </div>
+            <div class="col-3" style="border: red;border-style: outset;"></div>
+            <div class="col-3" style="border: red;border-style: outset;"></div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
