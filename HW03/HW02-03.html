@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .header {
+            display: flex;
+            padding: 6px 10px;
+            border-bottom-color: rgba(167, 151, 151, 0.877);
+            border-bottom-style: solid;
+            border-bottom-width: 2px;
+            background-color: white;
+        }
+
+        .header nav {
+            text-align: right;
+            width: 100%;
+            font-size: 0;
+        }
+
+        .header nav a {
+            font-size: 32px;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            line-height: 52px;
+            padding: 10px 10px;
+            transition: all .3s 0s ease;
+        }
+
+        .header nav select {
+            font-size: 15px;
+        }
+
+
+        .header nav a img:hover {
+            background-color: yellow;
+            border-color: yellow;
+            border-style: solid;
+            border-width: 3px;
+            color: yellow;
+        }
+
+        .header a {
+            font-size: 50px;
+            display: flex;
+            white-space: nowrap;
+            line-height: 85px;
+        }
+
+
+        .menu {
+            display: flex;
+            padding: 6px 10px;
+            background-color: rgb(255, 255, 255);
+        }
+
+
+        .menu nav {
+            text-align: right;
+            width: 100%;
+            font-size: 0;
+        }
+
+        .menu nav a {
+            font-size: 10px;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            display: inline-block;
+            line-height: 52px;
+            padding: 25px 10px 10px 10px;
+            transition: all .3s .1s ease;
+        }
+
+
+        .menu nav a:hover {
+            border-bottom-color: black;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+        }
+
+        .KARDONE h2 {
+            margin-bottom: 1px;
+            font-size: 30px;
+        }
+
+        .KARDONE {
+            margin-top: 15px;
+            margin-left: 90px;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .APPLE {
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .APPLE>.item:nth-child(even) .pic {
+            order: 1;
+        }
+
+        .item {
+            width: 100%;
+            /* margin: 10px; */
+            /* padding: 10px; */
+            display: flex;
+        }
+
+        .item img {
+            width: 480px;
+        }
+
+
+
+        .item .pic .item .txt {
+            width: 50%;
+        }
+
+        .Fresh h1 {
+            font-size: 60px;
+            margin-left: 30px;
+            margin-top: 60px;
+        }
+
+        .pic p {
+            color: yellow;
+            font-weight: bold;
+            font-size: 40px;
+            position: relative;
+            display: flex;
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+
+        .Fresh button {
+            width: 158px;
+            height: 50px;
+            color: white;
+            background-color: black;
+            transition: all .3s .1s ease;
+            font-weight: bold;
+            font-size: 15px;
+            margin-top: 40px;
+            margin-left: 30px;
+        }
+
+        .Fresh button:hover {
+            color: black;
+            background-color: yellow;
+        }
+
+        .sixbtn {
+            width: 100%;
+            position: relative;
+            padding: 75px 10px 10px 10px;
+            text-align: center;
+        }
+
+        .sixbtn button {
+            border: white;
+            transition: all .3s .1s ease;
+        }
+
+        .sixbtn button:hover {
+            border: rgb(168, 168, 168);
+            color: yellow;
+            box-shadow: 3px 3px 3px 3px #cccccc;
+        }
+
+        .veget {
+            display: flex;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .imgone img {
+            width: 570px;
+            height: 730px;
+            margin-left: 100px;
+        }
+
+        .imgone p{
+            font-size: 35px;
+            color: white;
+            margin-top: -220px;
+            font-weight: bold;
+            padding: 30px;
+        }
+
+        .imgone a{
+            font-size: 25px;
+            color: white;
+            font-weight: bold;
+            margin-left: -225px;
+        }
+
+        .imgtwo img {
+            width: 570px;
+            height: 350px;
+            padding: 10px;
+            margin-top: -10px;
+            margin-left: 10px;
+        }
+
+        
+
+        .imgtwo p{
+            font-size: 35px;
+            color: white;
+            margin-top: -250px;
+            margin-left: 20px;
+            font-weight: bold;
+            text-align: left;
+            padding: 30px;
+        }
+
+
+        .imgtwo a{
+            font-size: 25px;
+            color: white;
+            font-weight: bold;
+            margin-left: -340px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <a href="#" style="font-size: 30px;white-space: nowrap;"><img src="444.png" alt=""
+                style="width: 40px;height: 40px;">My account</a>
+        <nav>
+            <a href="#"><img src="111.png" alt="" style="width: 40px;height: 40px;"></a>
+            <a href="#"><img src="222.png" alt="" style="width: 40px;height: 40px;"></a>
+            <a href="#"><img src="333.png" alt="" style="width: 40px;height: 40px;"></a>
+            <select name="YourLocation">
+                　<option value="美國">USD</option>
+            </select>
+        </nav>
+    </div>
+
+    <div class="menu">
+        <div class="KARDONE">
+            <h2>KARDONE</h2>H E A L T L Y&nbsp;&nbsp;F O O D
+        </div>
+
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">ABOUT US</a>
+            <a href="#">COLLECTIONS</a>
+            <a href="#">BLOG</a>
+            <a href="#">CONTACT US</a>
+        </nav>
+    </div>
+
+
+    <div class="APPLE">
+        <div class="item pic">
+            <div class="pic">
+                <img src="APPLE.png" alt="圖片" style="width: 784px;height: 478px;">
+            </div>
+            <div class="Fresh">
+                <h1>Fresh and<br>Delicious</h1>
+                <p>ALL YEAR<br>ROUND!</p>
+                <button>REAF MORE</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="sixbtn">
+        <button><img src="btn1.png" alt=""></button>
+        <button><img src="btn2.png" alt=""></button>
+        <button><img src="btn3.png" alt=""></button>
+        <button><img src="btn4.png" alt=""></button>
+        <button><img src="btn5.png" alt=""></button>
+        <button><img src="btn6.png" alt=""></button>
+
+    </div>
+
+    <div class="veget">
+            <div class="imgone">
+                <img src="veget1.jpeg" alt="">
+                <p>Best Quality Products</p>
+                <a href="#">Shop now</a>
+            </div>
+            <div class="imgtwo">
+                <img src="veget2.jpeg" alt="" style="margin-bottom: 15px;">
+                <p>Hot Deals:<br>CRAZY PRICE $2.99</p>
+                <a href="#">Shop now</a>
+                <img src="veget3.jpeg" alt="" style="position: absolute;margin-top: 102px;margin-left: -172px;">
+            </div>
+    </div>
+
+
+</body>
+
+</html>
