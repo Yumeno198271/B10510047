@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .frame {
+            width: 400px;
+            height: 180px;
+            border-width: 3px;
+            border-style: dashed;
+            border-color: black;
+            padding: 5px;
+        }
+
+        .generate_num {
+            width: 200px;
+            height: 26px;
+            font-size: 15px;
+            border-color: black;
+            border-style: dashed;
+            background-color: aqua;
+        }
+
+        .input_box {
+            width: 200px;
+            height: 50px;
+            border-width: 3px;
+            border-style: dashed;
+            border-color: black;
+            font-size: 30px;
+            text-align:center
+        }
+
+        .btn_1 {
+            width: 60px;
+            height: 75px;
+            background-color: black;
+            color: white;
+            font-size: 40px;
+        }
+
+        .guess {
+            width: 60px;
+            height: 75px;
+            background-color: black;
+            color: white;
+            font-size: 40px;
+        }
+
+
+
+        .block {
+            position: absolute;
+            left: 32%;
+        }
+
+        .frame h1 {
+            margin-top: 14%;
+            margin-left: 34%;
+        }
+
+        .generate_num_btn{
+            padding: 30px;
+            margin-left: 8%;
+        }
+
+
+        .box_input{
+            margin-left: 9.3%;
+        }
+
+
+        .num_btn{
+            padding: 30px;
+            margin-left: 6%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container block">
+        <div class="row">
+
+
+            <div class="col-7">
+                <div class="frame">
+                    <h1 id="number">⠀</h1>
+                </div>
+            </div>
+
+
+
+            <div class="col-7 generate_num_btn">
+                <button class="generate_num" id="btn2" onclick="guessIt2()">產生數字</button>
+            </div>
+
+
+
+            <div class="col-7 box_input">
+                <input type="text" id="textfield" class="input_box">
+            </div>
+
+
+
+            <div class="container num_btn">
+                <div class="row">
+                    <div class="col-1">
+                        <button class="btn_1" onclick="num_btn1()">1</button>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn_1" onclick="num_btn2()">2</button>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn_1" onclick="num_btn3()">3</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <button class="btn_1" onclick="num_btn4()">4</button>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn_1" onclick="num_btn5()">5</button>
+
+                    </div>
+                    <div class="col-1">
+                        <button class="btn_1" onclick="num_btn6()">6</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <button class="btn_1" onclick="num_btn7()">7</button>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn_1" onclick="num_btn8()">8</button>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn_1" onclick="num_btn9()">9</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <button class="btn_1" onclick="num_btnX()">X</button>
+                    </div>
+                    <div class="col-1">
+                        <button class="btn_1" onclick="num_btn0()">0</button>
+                    </div>
+                    <div class="col-1">
+                        <input type="button" id="btn" value="√" class="guess">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        var correctNum = 24;
+        var biggestNum = 100;
+        var smallestNum = 0;
+
+        function guessIt() {
+            document.getElementById('btn').onclick = function (evt) {
+                guessAnswer();
+            }
+        }
+
+
+        function guessAnswer() {
+            var textNum = document.getElementById('textfield').value;
+            var textToInt = parseInt(textNum);
+            var N = document.getElementById("number").innerHTML;
+
+
+            if (N == '⠀') {
+                alert('請先產生數字');
+            } else if (textToInt > 100 || textToInt < 0) {
+                alert('請輸入範圍內的數字');
+            } else if (textToInt < correctNum) {
+                smallestNum = textToInt;
+                document.getElementById("number").innerHTML = textToInt + ' ~ ' + biggestNum;
+            } else if (textToInt == correctNum) {
+                alert('你猜對了');
+            } else if (textToInt > correctNum) {
+                biggestNum = textToInt;
+                document.getElementById("number").innerHTML = smallestNum + ' ~ ' + textToInt;
+            } else if (!textToInt) {
+                alert('請輸入範圍內的數字');
+            }
+
+        }
+        window.onload = guessIt;
+
+
+        function guessIt2() {
+            document.getElementById("number").innerHTML = 0 + ' ~ ' + 100;
+        }
+
+
+        function num_btn1() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '1';
+        }
+
+        function num_btn2() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '2';
+        }
+
+        function num_btn3() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '3';
+        }
+
+        function num_btn4() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '4';
+        }
+
+        function num_btn5() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '5';
+        }
+
+        function num_btn6() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '6';
+        }
+
+        function num_btn7() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '7';
+        }
+
+        function num_btn8() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '8';
+        }
+
+        function num_btn9() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '9';
+        }
+
+        function num_btn0() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '0';
+        }
+
+
+        function num_btnX() {
+            document.getElementById("textfield").value = '';
+        }
+
+
+
+    </script>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
