@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .btn_1 {
+            width: 60px;
+            height: 75px;
+            background-color: black;
+            color: white;
+            font-size: 40px;
+        }
+
+        .input_box {
+            font-size: 30px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+    <div class="container num_btn">
+        <div class="row">
+            <div class="col-12">
+                <button class="btn_1" onclick="num_btnP()">+</button>
+                <button class="btn_1" onclick="num_btnL()">-</button>
+                <button class="btn_1" onclick="num_btnM()">X</button>
+                <button class="btn_1" onclick="num_btnE()">/</button>
+                <button class="btn_1"><a href="javascript:window.location.reload()">C</a></button>
+                <button class="btn_1" onclick="num_btnXX()">←</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <input type="text" id="textfield" class="input_box" value="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <button class="btn_1" onclick="num_btn1()">1</button>
+            </div>
+            <div class="col-1">
+                <button class="btn_1" onclick="num_btn2()">2</button>
+            </div>
+            <div class="col-1">
+                <button class="btn_1" onclick="num_btn3()">3</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <button class="btn_1" onclick="num_btn4()">4</button>
+            </div>
+            <div class="col-1">
+                <button class="btn_1" onclick="num_btn5()">5</button>
+
+            </div>
+            <div class="col-1">
+                <button class="btn_1" onclick="num_btn6()">6</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <button class="btn_1" onclick="num_btn7()">7</button>
+            </div>
+            <div class="col-1">
+                <button class="btn_1" onclick="num_btn8()">8</button>
+            </div>
+            <div class="col-1">
+                <button class="btn_1" onclick="num_btn9()">9</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+                <button class="btn_1" onclick="num_btn0()">0</button>
+            </div>
+            <div class="col-1">
+                <button class="btn_1" onclick="num_btnX()">.</button>
+            </div>
+            <div class="col-1">
+                <button class="btn_1" onclick="num_btnO()">=</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+
+        var save1 = 0;
+
+        function num_btn1() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '1';
+        }
+
+        function num_btn2() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '2';
+        }
+
+        function num_btn3() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '3';
+        }
+
+        function num_btn4() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '4';
+        }
+
+        function num_btn5() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '5';
+        }
+
+        function num_btn6() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '6';
+        }
+
+        function num_btn7() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '7';
+        }
+
+        function num_btn8() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '8';
+        }
+
+        function num_btn9() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '9';
+        }
+
+        function num_btn0() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '0';
+        }
+
+
+        function num_btnX() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '.';
+        }
+
+
+        function num_btnP() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '+';
+        }
+
+
+        function num_btnL() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '-';
+        }
+
+
+        function num_btnM() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '*';
+        }
+
+
+        function num_btnE() {
+            var NUM = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = NUM + '/';
+        }
+
+
+        function num_btnO() {
+            var save2 = document.getElementById("textfield").value;
+            document.getElementById("textfield").value = eval(save2);
+        }
+
+
+
+        function num_btnXX() {
+            firstnum = document.getElementById('textfield').value;
+            toarray = firstnum.split('');
+            toarray.pop();
+            firstnum = toarray.join('');
+            document.getElementById('textfield').value = firstnum;
+        }
+
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
