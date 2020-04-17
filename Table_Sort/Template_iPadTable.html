@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="MyHelper.js"></script>
+    <style>
+        button {
+            width: 100%;
+            height: 100%;
+            border-color: transparent;
+        }
+
+
+        button:active {
+            background-color: #868686;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Template模板</h1>
+    <table>
+        <thead>
+
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+
+    <template id="templateTitle">
+        <tr>
+            <th><button>產品編號</button></th>
+            <th><button onclick="selling_price()">售價</button></th>
+            <th><button>儲存容量</button></th>
+            <th><button>說明</button></th>
+        </tr>
+    </template>
+    <template id="templateRow">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </template>
+
+    <script>
+        let body = $g('body');
+        let table = $c('table');
+        table.setAttribute("border", "2");
+        let thead = $c('thead');
+        let tbody = $c('tbody');
+        table.appendChild(thead);
+        table.appendChild(tbody);
+
+        body.appendChild(table);
+        let ipad = '';
+        window.onload = function () {
+            let xhr = new XMLHttpRequest;
+            xhr.onload = function () {
+                ipad = JSON.parse(this.responseText);
+                consttitlesArray = Object.keys(ipad[0]);
+                addThead();
+                ipad.forEach((item) => {
+                    addTbody(Object.values(item))
+                });
+            }
+            xhr.open("GET", "iPad.json");
+            xhr.send();
+        }
+        function addThead() {
+            lettemplateTitle = $g("#templateTitle");
+            thead.appendChild(templateTitle.content);
+        }
+
+        function addTbody(rowArray) {
+            let templateRow = $g("#templateRow");
+            // 複製節點內容
+            let cloneContent = templateRow.content.cloneNode(true);
+            let tds = cloneContent.querySelectorAll("td");
+            // tds[0].textContent = rowArray[0];
+            // tds[1].textContent = rowArray[1];
+            // tds[2].textContent = rowArray[2];
+            // tds[3].textContent = rowArray[3];
+            for (var i = 0; i < rowArray.length; i++) {
+                tds[i].textContent = rowArray[i];
+            }
+
+            tbody.appendChild(cloneContent);
+
+
+
+        }
+
+
+        let money = [];
+        let start = [];
+        let x = 0;
+
+
+
+
+        function selling_price() {
+
+            if (x == 10900) {
+                x == 10900;
+            }
+            else if (x != 10900) {
+                for (var i = 1; i <= 12; i++) {
+                    start[i - 1] = table.rows[i].cells[1].innerHTML;
+                }
+            }
+
+
+            for (var i = 1; i <= 12; i++) {
+                money[i - 1] = table.rows[i].cells[1].innerHTML;
+                table.rows[i].cells[1].innerHTML = '';
+                money.sort();
+            }
+
+
+            if (table.rows[1].cells[1].innerHTML = 10900) {
+                for (var i = 1; i <= 12; i++) {
+                    table.rows[i].cells[1].innerHTML = money[12 - i];
+                }
+            }
+            else {
+                for (var i = 1; i <= 12; i++) {
+                    table.rows[i].cells[1].innerHTML = money[i - 1];
+                }
+            }
+
+
+            x = start[0];
+        }
+
+
+        function big_to_small() {
+
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
