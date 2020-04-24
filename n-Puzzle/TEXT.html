@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .pikachu {
+            width: 437px;
+            height: 437px;
+        }
+
+        .puzzle button {
+            width: 144px;
+            height: 144px;
+            background-color: transparent;
+            border-color: transparent;
+        }
+
+
+        .puzzle tr td button img {
+            width: 144px;
+            height: 144px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <img class="pikachu" src="pikachu2.jpg" alt="pikachu">
+
+
+
+
+    <div>
+        <button onclick="upset555()">開始遊戲</button>
+        <button onclick="javascript:window.location.reload()">重新開始</button>
+    </div>
+
+
+
+    <table class="puzzle" id='puzzle'>
+        <tr>
+            <td><button onclick="mobile1()" disabled="disabled" id="one_btn"><img src="1.jpg" alt="1" id="one"></button>
+            </td>
+            <td><button onclick="mobile2()" disabled="disabled" id="two_btn"><img src="2.jpg" alt="2" id="two"></button>
+            </td>
+            <td><button onclick="mobile3()" disabled="disabled" id="three_btn"><img src="3.jpg" alt="3"
+                        id="three"></button></td>
+        </tr>
+        <tr>
+            <td><button onclick="mobile4()" disabled="disabled" id="four_btn"><img src="4.jpg" alt="4"
+                        id="four"></button></td>
+            <td><button onclick="mobile5()" disabled="disabled" id="five_btn"><img src="5.jpg" alt="5"
+                        id="five"></button></td>
+            <td><button onclick="mobile6()" disabled="disabled" id="six_btn"><img src="6.jpg" alt="6" id="six"></button>
+            </td>
+        </tr>
+        <tr>
+            <td><button onclick="mobile7()" disabled="disabled" id="seven_btn"><img src="7.jpg" alt="7"
+                        id="seven"></button></td>
+            <td><button onclick="mobile8()" disabled="disabled" id="eight_btn"><img src="8.jpg" alt="8"
+                        id="eight"></button></td>
+            <td><button onclick="mobile9()" disabled="disabled" id="nine_btn"><img src="9.jpg" alt="8"
+                        id="nine"></button></td>
+        </tr>
+    </table>
+
+
+    <script>
+
+        let table = document.getElementById('puzzle');
+
+
+
+
+        function upset555() {
+
+
+            D1 = table.rows[0].cells[0].firstElementChild.innerHTML
+            D2 = table.rows[0].cells[1].firstElementChild.innerHTML
+            D3 = table.rows[0].cells[2].firstElementChild.innerHTML
+            D4 = table.rows[1].cells[0].firstElementChild.innerHTML
+            D5 = table.rows[1].cells[1].firstElementChild.innerHTML
+            D6 = table.rows[1].cells[2].firstElementChild.innerHTML
+            D7 = table.rows[2].cells[0].firstElementChild.innerHTML
+            D8 = table.rows[2].cells[1].firstElementChild.innerHTML
+            D9 = table.rows[2].cells[2].firstElementChild.innerHTML
+
+
+            var arr = [1, 2, 3, 4, 5, 6, 7, 8];//原有陣列放全部數字
+
+            var result = [];//開另一個空陣列
+            var ranNum = 8;
+
+            for (var i = 0; i < ranNum; i++) {
+                var ran = Math.floor(Math.random() * arr.length);
+                result.push(arr.splice(ran, 1)[0]); //舊陣列去除數字轉移到新陣列
+            };
+
+
+            let ADD = [];
+
+            for (var i = 0; i <= 7; i++) {
+                ADD[i] = result[i];
+            }
+
+
+            document.getElementById('one_btn').disabled = false;
+            document.getElementById('two_btn').disabled = false;
+            document.getElementById('three_btn').disabled = false;
+            document.getElementById('four_btn').disabled = false;
+            document.getElementById('five_btn').disabled = false;
+            document.getElementById('six_btn').disabled = false;
+            document.getElementById('seven_btn').disabled = false;
+            document.getElementById('eight_btn').disabled = false;
+            document.getElementById('nine_btn').disabled = false;
+
+
+            table.rows[2].cells[2].firstElementChild.innerHTML = "";
+
+            document.getElementById("one").src = ADD[0] + ".jpg";
+            document.getElementById("two").src = ADD[1] + ".jpg";
+            document.getElementById("three").src = ADD[2] + ".jpg";
+            document.getElementById("four").src = ADD[3] + ".jpg";
+            document.getElementById("five").src = ADD[4] + ".jpg";
+            document.getElementById("six").src = ADD[5] + ".jpg";
+            document.getElementById("seven").src = ADD[6] + ".jpg";
+            document.getElementById("eight").src = ADD[7] + ".jpg";
+
+            alert("開始遊戲");
+
+
+        }
+
+
+
+
+
+
+
+        function mobile1() {
+            D1 = table.rows[0].cells[0].innerHTML;
+            D2 = table.rows[0].cells[1].innerHTML;
+            D3 = table.rows[0].cells[2].innerHTML;
+            D4 = table.rows[1].cells[0].innerHTML;
+            D5 = table.rows[1].cells[1].innerHTML;
+            D6 = table.rows[1].cells[2].innerHTML;
+            D7 = table.rows[2].cells[0].innerHTML;
+            D8 = table.rows[2].cells[1].innerHTML;
+            D9 = table.rows[2].cells[2].innerHTML;
+
+
+
+            if (table.rows[0].cells[1].firstElementChild.innerHTML == "") {
+                table.rows[0].cells[1].firstElementChild.innerHTML = table.rows[0].cells[0].firstElementChild.innerHTML;
+                table.rows[0].cells[0].firstElementChild.innerHTML = "";
+            } else if (table.rows[1].cells[0].firstElementChild.innerHTML == "") {
+                table.rows[1].cells[0].firstElementChild.innerHTML = table.rows[0].cells[0].firstElementChild.innerHTML;
+                table.rows[0].cells[0].firstElementChild.innerHTML = "";
+            }
+
+
+
+
+            if (table.rows[0].cells[0].firstElementChild.innerHTML == D1
+                && table.rows[0].cells[1].firstElementChild.innerHTML == D2
+                && table.rows[0].cells[2].firstElementChild.innerHTML == D3
+                && table.rows[1].cells[0].firstElementChild.innerHTML == D4
+                && table.rows[1].cells[1].firstElementChild.innerHTML == D5
+                && table.rows[1].cells[2].firstElementChild.innerHTML == D6
+                && table.rows[2].cellsY[0].firstElementChild.innerHTML == D7
+                && table.rows[2].cells[1].firstElementChild.innerHTML == D8) {
+                alert("恭喜通關!!!")
+            }
+
+
+        }
+
+
+
+        function mobile2() {
+            D1 = table.rows[0].cells[0].innerHTML;
+            D2 = table.rows[0].cells[1].innerHTML;
+            D3 = table.rows[0].cells[2].innerHTML;
+            D4 = table.rows[1].cells[0].innerHTML;
+            D5 = table.rows[1].cells[1].innerHTML;
+            D6 = table.rows[1].cells[2].innerHTML;
+            D7 = table.rows[2].cells[0].innerHTML;
+            D8 = table.rows[2].cells[1].innerHTML;
+            D9 = table.rows[2].cells[2].innerHTML;
+
+
+            if (table.rows[0].cells[0].firstElementChild.innerHTML == "") {
+                table.rows[0].cells[0].firstElementChild.innerHTML = table.rows[0].cells[1].firstElementChild.innerHTML;
+                table.rows[0].cells[1].firstElementChild.innerHTML = "";
+            } else if (table.rows[1].cells[1].firstElementChild.innerHTML == "") {
+                table.rows[1].cells[1].firstElementChild.innerHTML = table.rows[0].cells[1].firstElementChild.innerHTML;
+                table.rows[0].cells[1].firstElementChild.innerHTML = "";
+            } else if (table.rows[0].cells[2].firstElementChild.innerHTML == "") {
+                table.rows[0].cells[2].firstElementChild.innerHTML = table.rows[0].cells[1].firstElementChild.innerHTML;
+                table.rows[0].cells[1].firstElementChild.innerHTML = "";
+            }
+
+
+
+
+            if (table.rows[0].cells[0].firstElementChild.innerHTML == D1
+                && table.rows[0].cells[1].firstElementChild.innerHTML == D2
+                && table.rows[0].cells[2].firstElementChild.innerHTML == D3
+                && table.rows[1].cells[0].firstElementChild.innerHTML == D4
+                && table.rows[1].cells[1].firstElementChild.innerHTML == D5
+                && table.rows[1].cells[2].firstElementChild.innerHTML == D6
+                && table.rows[2].cellsY[0].firstElementChild.innerHTML == D7
+                && table.rows[2].cells[1].firstElementChild.innerHTML == D8) {
+                alert("恭喜通關!!!")
+            }
+
+        }
+
+
+
+
+        function mobile3() {
+            D1 = table.rows[0].cells[0].innerHTML;
+            D2 = table.rows[0].cells[1].innerHTML;
+            D3 = table.rows[0].cells[2].innerHTML;
+            D4 = table.rows[1].cells[0].innerHTML;
+            D5 = table.rows[1].cells[1].innerHTML;
+            D6 = table.rows[1].cells[2].innerHTML;
+            D7 = table.rows[2].cells[0].innerHTML;
+            D8 = table.rows[2].cells[1].innerHTML;
+            D9 = table.rows[2].cells[2].innerHTML;
+
+
+            if (table.rows[0].cells[1].firstElementChild.innerHTML == "") {
+                table.rows[0].cells[1].firstElementChild.innerHTML = table.rows[0].cells[2].firstElementChild.innerHTML;
+                table.rows[0].cells[2].firstElementChild.innerHTML = "";
+            } else if (table.rows[1].cells[2].firstElementChild.innerHTML == "") {
+                table.rows[1].cells[2].firstElementChild.innerHTML = table.rows[0].cells[2].firstElementChild.innerHTML;
+                table.rows[0].cells[2].firstElementChild.innerHTML = "";
+            }
+
+
+
+            if (table.rows[0].cells[0].firstElementChild.innerHTML == D1
+                && table.rows[0].cells[1].firstElementChild.innerHTML == D2
+                && table.rows[0].cells[2].firstElementChild.innerHTML == D3
+                && table.rows[1].cells[0].firstElementChild.innerHTML == D4
+                && table.rows[1].cells[1].firstElementChild.innerHTML == D5
+                && table.rows[1].cells[2].firstElementChild.innerHTML == D6
+                && table.rows[2].cellsY[0].firstElementChild.innerHTML == D7
+                && table.rows[2].cells[1].firstElementChild.innerHTML == D8) {
+                alert("恭喜通關!!!")
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+        function mobile4() {
+            D1 = table.rows[0].cells[0].innerHTML;
+            D2 = table.rows[0].cells[1].innerHTML;
+            D3 = table.rows[0].cells[2].innerHTML;
+            D4 = table.rows[1].cells[0].innerHTML;
+            D5 = table.rows[1].cells[1].innerHTML;
+            D6 = table.rows[1].cells[2].innerHTML;
+            D7 = table.rows[2].cells[0].innerHTML;
+            D8 = table.rows[2].cells[1].innerHTML;
+            D9 = table.rows[2].cells[2].innerHTML;
+
+
+            if (table.rows[0].cells[0].firstElementChild.innerHTML == "") {
+                table.rows[0].cells[0].firstElementChild.innerHTML = table.rows[1].cells[0].firstElementChild.innerHTML;
+                table.rows[1].cells[0].firstElementChild.innerHTML = "";
+            } else if (table.rows[1].cells[1].firstElementChild.innerHTML == "") {
+                table.rows[1].cells[1].firstElementChild.innerHTML = table.rows[1].cells[0].firstElementChild.innerHTML;
+                table.rows[1].cells[0].firstElementChild.innerHTML = "";
+            } else if (table.rows[2].cells[0].firstElementChild.innerHTML == "") {
+                table.rows[2].cells[0].firstElementChild.innerHTML = table.rows[1].cells[0].firstElementChild.innerHTML;
+                table.rows[1].cells[0].firstElementChild.innerHTML = "";
+            }
+
+
+
+
+            if (table.rows[0].cells[0].firstElementChild.innerHTML == D1
+                && table.rows[0].cells[1].firstElementChild.innerHTML == D2
+                && table.rows[0].cells[2].firstElementChild.innerHTML == D3
+                && table.rows[1].cells[0].firstElementChild.innerHTML == D4
+                && table.rows[1].cells[1].firstElementChild.innerHTML == D5
+                && table.rows[1].cells[2].firstElementChild.innerHTML == D6
+                && table.rows[2].cellsY[0].firstElementChild.innerHTML == D7
+                && table.rows[2].cells[1].firstElementChild.innerHTML == D8) {
+                alert("恭喜通關!!!")
+            }
+
+
+        }
+
+
+
+        function mobile5() {
+            D1 = table.rows[0].cells[0].innerHTML;
+            D2 = table.rows[0].cells[1].innerHTML;
+            D3 = table.rows[0].cells[2].innerHTML;
+            D4 = table.rows[1].cells[0].innerHTML;
+            D5 = table.rows[1].cells[1].innerHTML;
+            D6 = table.rows[1].cells[2].innerHTML;
+            D7 = table.rows[2].cells[0].innerHTML;
+            D8 = table.rows[2].cells[1].innerHTML;
+            D9 = table.rows[2].cells[2].innerHTML;
+
+            if (table.rows[1].cells[0].firstElementChild.innerHTML == "") {
+                table.rows[1].cells[0].firstElementChild.innerHTML = table.rows[1].cells[1].firstElementChild.innerHTML;
+                table.rows[1].cells[1].firstElementChild.innerHTML = "";
+            } else if (table.rows[0].cells[1].firstElementChild.innerHTML == "") {
+                table.rows[0].cells[1].firstElementChild.innerHTML = table.rows[1].cells[1].firstElementChild.innerHTML;
+                table.rows[1].cells[1].firstElementChild.innerHTML = "";
+            } else if (table.rows[1].cells[2].firstElementChild.innerHTML == "") {
+                table.rows[1].cells[2].firstElementChild.innerHTML = table.rows[1].cells[1].firstElementChild.innerHTML;
+                table.rows[1].cells[1].firstElementChild.innerHTML = "";
+            } else if (table.rows[2].cells[1].firstElementChild.innerHTML == "") {
+                table.rows[2].cells[1].firstElementChild.innerHTML = table.rows[1].cells[1].firstElementChild.innerHTML;
+                table.rows[1].cells[1].firstElementChild.innerHTML = "";
+            }
+
+
+
+            if (table.rows[0].cells[0].firstElementChild.innerHTML == D1
+                && table.rows[0].cells[1].firstElementChild.innerHTML == D2
+                && table.rows[0].cells[2].firstElementChild.innerHTML == D3
+                && table.rows[1].cells[0].firstElementChild.innerHTML == D4
+                && table.rows[1].cells[1].firstElementChild.innerHTML == D5
+                && table.rows[1].cells[2].firstElementChild.innerHTML == D6
+                && table.rows[2].cellsY[0].firstElementChild.innerHTML == D7
+                && table.rows[2].cells[1].firstElementChild.innerHTML == D8) {
+                alert("恭喜通關!!!")
+            }
+
+
+
+        }
+
+
+
+        function mobile6() {
+            D1 = table.rows[0].cells[0].innerHTML;
+            D2 = table.rows[0].cells[1].innerHTML;
+            D3 = table.rows[0].cells[2].innerHTML;
+            D4 = table.rows[1].cells[0].innerHTML;
+            D5 = table.rows[1].cells[1].innerHTML;
+            D6 = table.rows[1].cells[2].innerHTML;
+            D7 = table.rows[2].cells[0].innerHTML;
+            D8 = table.rows[2].cells[1].innerHTML;
+            D9 = table.rows[2].cells[2].innerHTML;
+
+            if (table.rows[0].cells[2].firstElementChild.innerHTML == "") {
+                table.rows[0].cells[2].firstElementChild.innerHTML = table.rows[1].cells[2].firstElementChild.innerHTML;
+                table.rows[1].cells[2].firstElementChild.innerHTML = "";
+            } else if (table.rows[1].cells[1].firstElementChild.innerHTML == "") {
+                table.rows[1].cells[1].firstElementChild.innerHTML = table.rows[1].cells[2].firstElementChild.innerHTML;
+                table.rows[1].cells[2].firstElementChild.innerHTML = "";
+            } else if (table.rows[2].cells[2].firstElementChild.innerHTML == "") {
+                table.rows[2].cells[2].firstElementChild.innerHTML = table.rows[1].cells[2].firstElementChild.innerHTML;
+                table.rows[1].cells[2].firstElementChild.innerHTML = "";
+            }
+
+
+
+
+            if (table.rows[0].cells[0].firstElementChild.innerHTML == D1
+                && table.rows[0].cells[1].firstElementChild.innerHTML == D2
+                && table.rows[0].cells[2].firstElementChild.innerHTML == D3
+                && table.rows[1].cells[0].firstElementChild.innerHTML == D4
+                && table.rows[1].cells[1].firstElementChild.innerHTML == D5
+                && table.rows[1].cells[2].firstElementChild.innerHTML == D6
+                && table.rows[2].cellsY[0].firstElementChild.innerHTML == D7
+                && table.rows[2].cells[1].firstElementChild.innerHTML == D8) {
+                alert("恭喜通關!!!")
+            }
+
+
+
+        }
+
+
+
+
+        function mobile7() {
+            D1 = table.rows[0].cells[0].innerHTML;
+            D2 = table.rows[0].cells[1].innerHTML;
+            D3 = table.rows[0].cells[2].innerHTML;
+            D4 = table.rows[1].cells[0].innerHTML;
+            D5 = table.rows[1].cells[1].innerHTML;
+            D6 = table.rows[1].cells[2].innerHTML;
+            D7 = table.rows[2].cells[0].innerHTML;
+            D8 = table.rows[2].cells[1].innerHTML;
+            D9 = table.rows[2].cells[2].innerHTML;
+
+
+
+
+            if (table.rows[1].cells[0].firstElementChild.innerHTML == "") {
+                table.rows[1].cells[0].firstElementChild.innerHTML = table.rows[2].cells[0].firstElementChild.innerHTML;
+                table.rows[2].cells[0].firstElementChild.innerHTML = "";
+            } else if (table.rows[2].cells[1].firstElementChild.innerHTML == "") {
+                table.rows[2].cells[1].firstElementChild.innerHTML = table.rows[2].cells[0].firstElementChild.innerHTML;
+                table.rows[2].cells[0].firstElementChild.innerHTML = "";
+            }
+
+
+
+            if (table.rows[0].cells[0].firstElementChild.innerHTML == D1
+                && table.rows[0].cells[1].firstElementChild.innerHTML == D2
+                && table.rows[0].cells[2].firstElementChild.innerHTML == D3
+                && table.rows[1].cells[0].firstElementChild.innerHTML == D4
+                && table.rows[1].cells[1].firstElementChild.innerHTML == D5
+                && table.rows[1].cells[2].firstElementChild.innerHTML == D6
+                && table.rows[2].cellsY[0].firstElementChild.innerHTML == D7
+                && table.rows[2].cells[1].firstElementChild.innerHTML == D8) {
+                alert("恭喜通關!!!")
+            }
+
+
+        }
+
+
+
+
+
+        function mobile8() {
+            D1 = table.rows[0].cells[0].innerHTML;
+            D2 = table.rows[0].cells[1].innerHTML;
+            D3 = table.rows[0].cells[2].innerHTML;
+            D4 = table.rows[1].cells[0].innerHTML;
+            D5 = table.rows[1].cells[1].innerHTML;
+            D6 = table.rows[1].cells[2].innerHTML;
+            D7 = table.rows[2].cells[0].innerHTML;
+            D8 = table.rows[2].cells[1].innerHTML;
+            D9 = table.rows[2].cells[2].innerHTML;
+
+
+            if (table.rows[2].cells[0].firstElementChild.innerHTML == "") {
+                table.rows[2].cells[0].firstElementChild.innerHTML = table.rows[2].cells[1].firstElementChild.innerHTML;
+                table.rows[2].cells[1].firstElementChild.innerHTML = "";
+            } else if (table.rows[1].cells[1].firstElementChild.innerHTML == "") {
+                table.rows[1].cells[1].firstElementChild.innerHTML = table.rows[2].cells[1].firstElementChild.innerHTML;
+                table.rows[2].cells[1].firstElementChild.innerHTML = "";
+            } else if (table.rows[2].cells[2].firstElementChild.innerHTML == "") {
+                table.rows[2].cells[2].firstElementChild.innerHTML = table.rows[2].cells[1].firstElementChild.innerHTML;
+                table.rows[2].cells[1].firstElementChild.innerHTML = "";
+            }
+
+
+
+            if (table.rows[0].cells[0].firstElementChild.innerHTML == D1
+                && table.rows[0].cells[1].firstElementChild.innerHTML == D2
+                && table.rows[0].cells[2].firstElementChild.innerHTML == D3
+                && table.rows[1].cells[0].firstElementChild.innerHTML == D4
+                && table.rows[1].cells[1].firstElementChild.innerHTML == D5
+                && table.rows[1].cells[2].firstElementChild.innerHTML == D6
+                && table.rows[2].cellsY[0].firstElementChild.innerHTML == D7
+                && table.rows[2].cells[1].firstElementChild.innerHTML == D8) {
+                alert("恭喜通關!!!")
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+        function mobile9() {
+            D1 = table.rows[0].cells[0].innerHTML;
+            D2 = table.rows[0].cells[1].innerHTML;
+            D3 = table.rows[0].cells[2].innerHTML;
+            D4 = table.rows[1].cells[0].innerHTML;
+            D5 = table.rows[1].cells[1].innerHTML;
+            D6 = table.rows[1].cells[2].innerHTML;
+            D7 = table.rows[2].cells[0].innerHTML;
+            D8 = table.rows[2].cells[1].innerHTML;
+            D9 = table.rows[2].cells[2].innerHTML;
+
+
+            if (table.rows[2].cells[1].firstElementChild.innerHTML == "") {
+                table.rows[2].cells[1].firstElementChild.innerHTML = table.rows[2].cells[2].firstElementChild.innerHTML;
+                table.rows[2].cells[2].firstElementChild.innerHTML = "";
+            } else if (table.rows[1].cells[2].firstElementChild.innerHTML == "") {
+                table.rows[1].cells[2].firstElementChild.innerHTML = table.rows[2].cells[2].firstElementChild.innerHTML;
+                table.rows[2].cells[2].firstElementChild.innerHTML = "";
+            }
+
+
+            if (table.rows[0].cells[0].firstElementChild.innerHTML == D1
+                && table.rows[0].cells[1].firstElementChild.innerHTML == D2
+                && table.rows[0].cells[2].firstElementChild.innerHTML == D3
+                && table.rows[1].cells[0].firstElementChild.innerHTML == D4
+                && table.rows[1].cells[1].firstElementChild.innerHTML == D5
+                && table.rows[1].cells[2].firstElementChild.innerHTML == D6
+                && table.rows[2].cellsY[0].firstElementChild.innerHTML == D7
+                && table.rows[2].cells[1].firstElementChild.innerHTML == D8) {
+                alert("恭喜通關!!!")
+            }
+
+
+
+        }
+
+
+
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
