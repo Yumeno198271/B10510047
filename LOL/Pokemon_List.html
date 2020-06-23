@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="MyHelper.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 100%;
+            height: 800px;
+            background-image: url('http://dl.garenanow.com/lol/loltw/web/images/artwork/7.jpg');
+        }
+
+        .heroimg {
+            padding-top: 10px;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+    <div class="box">
+        <h1>LOL英雄列表</h1>
+        <div class="row">
+            <div id="brrr">
+            </div>
+            <div id="container">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="HeroName"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="Helodata" class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        var $container = $('#container');
+
+        var $Helodata = $('#Helodata');
+
+        var $HeroName = $('#HeroName');
+
+
+
+
+
+
+
+
+
+        window.onload = function allPokemon() {
+
+            $.ajax({
+                type: "Get",
+                url: "https://raw.githubusercontent.com/Morta1033/JavaScript/master/LOL/LOL.json",
+                success: function (response) {
+                    DDD = JSON.parse(response);
+
+
+
+                    for (let i = 0; i < 20; i++) {
+                        let pathFile = DDD[i].Image;
+
+                        //建立<img src=''>元素
+                        let img = $(`<img class="heroimg" data-toggle="modal" data-target="#exampleModal" onclick="btn_${i}()">`);
+
+                        
+
+                        img.attr('src', pathFile);
+
+                        //加入DOM元素            
+                        $container.append('　　　　　　　　　　　　　　　　', img);
+                        
+
+                    }
+
+                }
+            });
+        }
+
+
+
+
+
+
+
+        function btn_0() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[0].Name}`);
+            $Helodata.append(`HP: ${DDD[0].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[0].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[0].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[0].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[0].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[0].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[0].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[0].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[0].Stats.MR}`);
+        }
+
+
+
+
+
+        function btn_1() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[1].Name}`);
+            $Helodata.append(`HP: ${DDD[1].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[1].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[1].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[1].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[1].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[1].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[1].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[1].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[1].Stats.MR}`);
+        }
+
+
+
+
+        function btn_2() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[2].Name}`);
+            $Helodata.append(`HP: ${DDD[2].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[2].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[2].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[2].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[2].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[2].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[2].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[2].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[2].Stats.MR}`);
+        }
+
+
+
+        function btn_3() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[3].Name}`);
+            $Helodata.append(`HP: ${DDD[3].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[3].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[3].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[3].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[3].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[3].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[3].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[3].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[3].Stats.MR}`);
+        }
+
+
+
+
+
+
+        function btn_4() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[4].Name}`);
+            $Helodata.append(`HP: ${DDD[4].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[4].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[4].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[4].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[4].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[4].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[4].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[4].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[4].Stats.MR}`);
+        }
+
+
+
+
+
+        function btn_5() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[5].Name}`);
+            $Helodata.append(`HP: ${DDD[5].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[5].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[5].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[5].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[5].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[5].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[5].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[5].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[5].Stats.MR}`);
+        }
+
+
+
+        function btn_6() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[6].Name}`);
+            $Helodata.append(`HP: ${DDD[6].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[6].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[6].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[6].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[6].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[6].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[6].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[6].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[6].Stats.MR}`);
+        }
+
+
+
+
+
+
+        function btn_7() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[7].Name}`);
+            $Helodata.append(`HP: ${DDD[7].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[7].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[7].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[7].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[7].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[7].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[7].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[7].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[7].Stats.MR}`);
+        }
+
+
+
+
+
+        function btn_8() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[8].Name}`);
+            $Helodata.append(`HP: ${DDD[8].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[8].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[8].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[8].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[8].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[8].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[8].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[8].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[8].Stats.MR}`);
+        }
+
+
+
+
+        function btn_9() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[9].Name}`);
+            $Helodata.append(`HP: ${DDD[9].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[9].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[9].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[9].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[9].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[9].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[9].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[9].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[9].Stats.MR}`);
+        }
+
+
+
+
+        function btn_10() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[10].Name}`);
+            $Helodata.append(`HP: ${DDD[10].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[10].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[10].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[10].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[10].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[10].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[10].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[10].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[10].Stats.MR}`);
+        }
+
+
+
+
+        function btn_11() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[11].Name}`);
+            $Helodata.append(`HP: ${DDD[11].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[11].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[11].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[11].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[11].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[11].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[11].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[11].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[11].Stats.MR}`);
+        }
+
+
+
+
+        function btn_12() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[12].Name}`);
+            $Helodata.append(`HP: ${DDD[12].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[12].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[12].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[12].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[12].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[12].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[12].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[12].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[12].Stats.MR}`);
+        }
+
+
+
+
+
+
+
+        function btn_13() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[13].Name}`);
+            $Helodata.append(`HP: ${DDD[13].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[13].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[13].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[13].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[13].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[13].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[13].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[13].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[13].Stats.MR}`);
+        }
+
+
+
+
+
+        function btn_14() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[14].Name}`);
+            $Helodata.append(`HP: ${DDD[14].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[14].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[14].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[14].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[14].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[14].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[14].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[14].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[14].Stats.MR}`);
+        }
+
+
+
+
+
+
+        function btn_15() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[15].Name}`);
+            $Helodata.append(`HP: ${DDD[15].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[15].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[15].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[15].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[15].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[15].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[15].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[15].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[15].Stats.MR}`);
+        }
+
+
+
+
+
+        function btn_16() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[16].Name}`);
+            $Helodata.append(`HP: ${DDD[16].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[16].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[16].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[16].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[16].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[16].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[16].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[16].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[16].Stats.MR}`);
+        }
+
+
+
+
+
+        function btn_17() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[17].Name}`);
+            $Helodata.append(`HP: ${DDD[17].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[17].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[17].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[17].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[17].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[17].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[17].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[17].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[17].Stats.MR}`);
+        }
+
+
+
+
+
+
+
+        function btn_18() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[18].Name}`);
+            $Helodata.append(`HP: ${DDD[18].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[18].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[18].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[18].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[18].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[18].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[18].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[18].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[18].Stats.MR}`);
+        }
+
+
+
+
+
+
+
+        function btn_19() {
+
+            $("#HeroName").empty();
+            $("#Helodata").empty();
+
+
+            $HeroName.append(`${DDD[19].Name}`);
+            $Helodata.append(`HP: ${DDD[19].Stats.HP}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`HEALTH_REGENERATION: ${DDD[19].Stats.HEALTH_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA: ${DDD[19].Stats.MANA}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MANA_REGENERATION: ${DDD[19].Stats.MANA_REGENERATION}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MS: ${DDD[19].Stats.MS}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD: ${DDD[19].Stats.AD}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`AD_DISTANCE: ${DDD[19].Stats.AD_DISTANCE}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`ARM: ${DDD[19].Stats.ARM}`);
+            $Helodata.append('<br>');
+            $Helodata.append(`MR: ${DDD[19].Stats.MR}`);
+        }
+
+
+
+
+
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
