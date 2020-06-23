@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        .col-6 {
+            height: 1000px;
+        }
+
+        .colour {
+            width: 150px;
+            height: 100px;
+            border-color: #dfdfdf;
+            background-color: transparent;
+        }
+
+
+        .gray_lines {
+            width: 100%;
+            height: 1px;
+            background-color: #dfdfdf;
+            margin: 30px 0 30px 0;
+        }
+
+        .colour p {
+            font-size: 15px;
+            margin-top: -20px;
+        }
+
+        .colourO {
+            font-size: 50px;
+        }
+
+
+        .space_gray {
+            color: #a1a1a1;
+        }
+
+        .silver {
+            color: #c0c0c0;
+        }
+
+        .golden {
+            color: #ffd700;
+        }
+
+
+        .colour:hover {
+            border-color: #00eaff;
+        }
+
+
+
+        .phone_photo img {
+            margin-left: -50px;
+            width: 576px;
+            height: 620px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6 phone_photo">
+                <img id="PhonePhoto" src="ipad111.png" alt="圖片說明">
+            </div>
+            <div class="col-6">
+                <div class="col-12">
+                    <h1>購買 iPad</h1>
+                    <p>購買 iPad 可享免額外付費運送服務。</p>
+                </div>
+                <div class="col-12">
+                    <p>外觀</p>
+                    <button onclick="PhonePhoto1()" class="colour colourO space_gray">●<br>
+                        <p>太空灰色</p>
+                    </button>
+                    <button onclick="PhonePhoto2()" class="colour colourO silver">●<br>
+                        <p>銀色</p>
+                    </button>
+                    <button onclick="PhonePhoto3()" class="colour colourO golden">●<br>
+                        <p>金色</p>
+                    </button>
+                </div>
+                <div class="gray_lines"></div>
+                <div class="col-12">
+                    <p>儲存裝置</p>
+                    <button class="colour capacity" onclick="price1()">32GB<br>NT$10,900起</button>
+                    <button class="colour capacity" onclick="price2()">128GB<br>NT$13,900起</button>
+                </div>
+                <div class="gray_lines"></div>
+                <div class="col-12">
+                    <p>價格</p>
+                    <h1 id="NT"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+        //iPhone, iPad, Mac, Watch
+        var products = {
+            iphone: {
+                p01: { id: 'p01', color: '紅', price: '25000', storage: '64G', network: 'Wifi', pic: 'p01', url: 'ipad111.png' },
+                p02: { id: 'p02', color: '藍', price: '27000', storage: '128G', network: 'Wifi', pic: 'p02', url: 'ipad222.png' },
+                p03: { id: 'p03', color: '黃', price: '28000', storage: '256G', network: 'Wifi', pic: 'p03', url: 'ipad333.png' }
+            },
+            ipad: {
+                ip01: { id: 'ip01', color: '太空灰色', storage: '32G', NT: '10,900' }
+            },
+            mac: {},
+            watch: {}
+        };
+
+
+
+
+
+        function price1() {
+            document.getElementById("NT").innerHTML = `NT$${products.iphone.p01.price}`;
+        }
+
+
+        function price2() {
+            document.getElementById("NT").innerHTML = `NT$${products.iphone.p02.price}`;
+        }
+
+
+
+
+        function PhonePhoto1() {
+            document.getElementById("PhonePhoto").src = `${products.iphone.p01.url}`
+        }
+
+
+        function PhonePhoto2() {
+            document.getElementById("PhonePhoto").src = `${products.iphone.p02.url}`
+        }
+
+
+        function PhonePhoto3() {
+            document.getElementById("PhonePhoto").src = `${products.iphone.p03.url}`
+        }
+
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
